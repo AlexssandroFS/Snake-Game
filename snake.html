@@ -1,0 +1,83 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="snake.css">
+
+</head>
+<body><br>
+<marquee class="marquee"> Hora de jogar!   Seja campeão em SNAKE!  </marquee>
+<h1>  Game Snake! </h1><br><br>
+<div>
+
+<form> <p>  Faça seu cadastro: </p>
+<fieldset class="form">
+	<label for="nome">Nome</label><br>
+	<input id="nome" f name="nome" type="text"> </input><br><br>
+	<label for="email">E-mail</label><br>
+	<input id="email" name="email" type="text"> </input><br><br>
+	<label for="senha">Senha</label><br>
+	<input id="senha" name="senha" type="password"> </input><br><br>
+	<label for="senha2">Repita a senha</label><br>
+	<input id="senha2" name="senha2" type="password"> </input><br><br><br>
+	<input id="sbmit" type="button" value="Enviar"onclink="app.formSubmit" class="botao"> </input><br>
+</fieldset>	
+</form>
+
+</div>
+
+<canvas id="quadro" width="500" height="500">
+
+<script>
+
+class App{
+	constructor(){
+		this.nomeEl=document.getElementById("nome");
+		this.emailEl=document.getElementById("email");
+		this.senhaEl=document.getElementById("senha");
+		this.senha2El=document.getElementById("senha2");
+		//this.nome = this.email = this.senha = this.senha2 = null;
+		
+		this.nome = null;
+		this.email = null;
+		this.senha = null;
+		this.senha2 = null;
+	}
+	
+	formSubmitEvent(){
+		this.nome = this.nomeEl.value;
+		this.email = this.emailEl.value;
+		this.senha = this.senhaE1.value;
+		this.senha2 = this.senha2El.value;
+				
+		if (this.senha != this.senha2){
+		window.alert("senhas diferentes, digite novamente");
+		}else{
+		cadastro=("nome":this.nome, "email":this.email, "senha":this.senha);
+		
+		this.enviaCadastro(cadastro)
+		}
+		
+	}
+	
+}
+
+	sendScore(value){
+		var d = ("score":value);
+		console.log(d);
+		$.ajax({
+		url:"/ws/score"
+		type:"post";
+		dataType:"json";
+		contentType:"application/json",
+		sucess: function(data){
+		console.log(data)
+		},
+		data.JSON.stringify(d);
+		})
+	
+	}
+	
+app=new App()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Game Snake*/
+body{ padding 0,0;
+
+	color: white;
+	background-image: url('snake black.jpg');
+	//background: blue;
+	max-width:100%;
+	height:auto;
+	
+	position: flex;
+    top: 10;
+    right: 100;
+}
+marquee{
+	font-size: 60px;
+	color: white;
+	text-align: center;
+}
+
+h1{
+	font-size: 60px;
+	color: yellow;
+	text-align: center;
+}
+
+p{
+	font-size: 40px;
+	
+}
+
+form{
+	margin: 100px;
+	width: 30%;
+	height: 100%;
+}
+
+.botao{
+	font-size: 20px;
+	background-color: yellow;
+	color:black;
+	width:140px;  
+	height:30px;	
+	display:block;	
+	border-bottom-style: 50px;
+	
+}
